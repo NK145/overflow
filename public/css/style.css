@@ -1,0 +1,36 @@
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+footer {
+    background-color: #03a9f4 !important;
+}
+
+.askquestion {
+    display: none;
+}
+.boldtxt {
+    color: red;
+    font-size: inherit;
+}
+.nav-top {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.search-question {
+    /*margin-top: 10px;*/
+    margin-right: -5%;
+    height: 60px;
+    padding-top: -5px;
+}
+.votes {
+    font-size: 30px;
+    text-align: center;
+}
+.changesvotes{
+    cursor: pointer;
+    background-image: url("../images/avator.svg");
+}
