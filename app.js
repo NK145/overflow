@@ -22,12 +22,10 @@ var upvote = require('./routes/upvote');
 
 var app = express();
 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "overflow"
-});
+const config = require('./config');
+console.log('Run at ' + process.env.NODE_ENV);
+
+var con = mysql.createConnection(config.MYSQL);
 con.connect(function (err) {
     if (err) throw err;
     console.log("Connected to database");
