@@ -22,12 +22,10 @@ router.post('/', function(req, res, next) {
     const title = sanitizeHtml(req.body.title);
     const description = sanitizeHtml(req.body.description);
     const tags = sanitizeHtml(req.body.tags);
-
-
-    var sql = "INSERT INTO questions(title, description,tags, askedby, time, votes) " +
-        " VALUES ( '"+title+"', '"+description+"', '"+tags+"', '"+req.session.user[0].id+"', CURRENT_TIMESTAMP, '0')";
+    var sql = "INSERT INTO questions(title, description,tags, askedby, askedtime, votes , extra) " +
+        " VALUES ( '"+title+"', '"+description+"', '"+tags+"', '"+req.session.user[0].id+"', CURRENT_TIMESTAMP, '0' , '0')";
     con.query(sql, function (err, result, fields) {
-        res.redirect('/');
+        res.redirect('/questions');
     });
 
 
