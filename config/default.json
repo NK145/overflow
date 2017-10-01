@@ -1,0 +1,8 @@
+{
+    "MYSQL": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "overflow"
+    }
+}
