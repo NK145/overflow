@@ -53,7 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/login', login);
-app.use('/saveQuestion', savequestion);
+app.use('/savequestion', savequestion);
 app.use('/questions', questions);
 app.use('/questionbyid', questionbyid);
 app.use('/saveanswer', saveanswer);
