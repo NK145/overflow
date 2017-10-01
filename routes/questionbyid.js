@@ -7,12 +7,8 @@ var router = express.Router();
 var sanitizeHtml = require('sanitize-html');
 var mysql = require('mysql');
 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "overflow"
-});
+const config = require('./config');
+var con = mysql.createConnection(config.MYSQL);
 var staterData = {
     title: 'Express',
     company : "TECH OVERFLOW",
