@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
     } else {
         staterData.username = req.session.user[0].name;
     // staterData.username = "narendra";
-    console.log( staterData.username + " dgsd fsssssssssssssssssssssssssssssssss ");
+    console.log(staterData.username);
         res.render('index', staterData);
     }
 });
