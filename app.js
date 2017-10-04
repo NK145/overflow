@@ -1,36 +1,39 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var cons = require('consolidate');
-var session = require('express-session');
-var mysql = require('mysql');
+'use strict';
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var signup = require('./routes/signup');
-var savequestion = require('./routes/savequestion');
-var questions = require('./routes/questions');
-var questionbyid = require('./routes/questionbyid');
-var saveanswer = require('./routes/saveanswer');
-var login = require('./routes/login');
-var logout = require('./routes/logout');
-var downvote = require('./routes/downvote');
-var upvote = require('./routes/upvote');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const cons = require('consolidate');
+const session = require('express-session');
+const mysql = require('mysql');
 
-var app = express();
+const index = require('./routes/index');
+const users = require('./routes/users');
+const signup = require('./routes/signup');
+const savequestion = require('./routes/savequestion');
+const questions = require('./routes/questions');
+const questionbyid = require('./routes/questionbyid');
+const saveanswer = require('./routes/saveanswer');
+const login = require('./routes/login');
+const logout = require('./routes/logout');
+const downvote = require('./routes/downvote');
+const upvote = require('./routes/upvote');
+
+const app = express();
 
 const config = require('./config');
-console.log('Run at ' + process.env.NODE_ENV);
+console.log(`Run at ${ process.env.NODE_ENV}`);
 
-var con = mysql.createConnection(config.MYSQL);
-con.connect(function (err) {
-    if (err) throw err;
-    console.log("Connected to database");
+const con = mysql.createConnection(config.MYSQL);
+con.connect((err) => {
+    if (err) {
+        throw err;
+    }
+    console.log('Connected to database');
 });
-var sess = {
+const sess = {
     secret: 'awhdRkRSKSLSIEHGugdYdfd'
 };
 app.use(session(sess));
@@ -61,21 +64,21 @@ app.use('/downvote', downvote);
 app.use('/upvote', upvote);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+app.use((req, res, next) => {
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use((err, req, res) => {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;

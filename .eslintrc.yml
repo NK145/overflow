@@ -17,6 +17,10 @@ rules:
   comma-dangle: [2, "never"]
   # Disallow unnecessary parentheses
   no-extra-parens: [2, "all"]
+  # Allow console logs
+  no-console: 0
+  # Enforce CRLF linebrakes
+  linebreak-style: [2, "windows"]
 
   # Best Practices https://eslint.org/docs/rules/#best-practices
   # Enforces getter/setter pairs in objects
