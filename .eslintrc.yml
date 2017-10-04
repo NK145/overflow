@@ -98,7 +98,7 @@ rules:
   # Require newline at end of files
   eol-last: 2
   # 4 space indentation
-  indent: [2, 4, {SwitchCase: 4}]
+  indent: [2, 4, { "SwitchCase": 1 }]
   # max 150 length
   max-len: [2, 150, 2]
   # require parens for Constructor
