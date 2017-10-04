@@ -1,0 +1,150 @@
+env:
+  node: true
+  es6: true
+  mocha: true
+
+# Enable ECMAScript 6 features
+parserOptions:
+  ecmaVersion: 6
+
+# Enables a subset of core rules that report common problems, which have a check mark on the rules page
+# Rules: https://eslint.org/docs/rules/
+extends: "eslint:recommended"
+
+rules:
+  # Enable additional rules
+  # Disallow or Enforce Dangling Commas
+  comma-dangle: [2, "never"]
+  # Disallow unnecessary parentheses
+  no-extra-parens: [2, "all"]
+
+  # Best Practices https://eslint.org/docs/rules/#best-practices
+  # Enforces getter/setter pairs in objects
+  accessor-pairs: 2
+  #Treat var as Block Scoped
+  block-scoped-var: 2
+  # Limit Cyclomatic Complexity
+  complexity: [2, 7]
+  # Require Consistent Returns
+  consistent-return: 2
+  # Require Following Curly Brace Conventions
+  curly: 2
+  # Require Default Case in Switch Statements
+  default-case: 2
+  # Require Dot Notation
+  dot-notation: 2
+  # Require === and !==
+  eqeqeq: 2
+  # Disallow Use of Alert
+  no-alert: 2
+  # Disallow Use of caller/callee
+  no-caller: 2
+  # Disallow return before else
+  no-else-return: 2
+  # Disallow eval()
+  no-eval: 2
+  # Disallow Extending of Native Objects
+  no-extend-native: 2
+  # Disallow unnecessary function binding
+  no-extra-bind: 2
+  # Disallow Floating Decimals
+  no-floating-decimal: 2
+  # Disallow the type conversion with shorter notations.
+  no-implicit-coercion: 2
+  # Disallow Unnecessary Nested Blocks
+  no-lone-blocks: 2
+  # Disallow Functions in Loops
+  no-loop-func: 2
+  # Disallow multiple spaces
+  no-multi-spaces: 2
+  # Disallow Multiline Strings
+  no-multi-str: 2
+  # Disallow Reassignment of Native Objects
+  no-native-reassign: 2
+  # Disallow Function Constructor
+  no-new-func: 2
+  # Disallow Primitive Wrapper Instances
+  no-new-wrappers: 2
+  # Disallow new For Side Effects
+  no-new: 2
+  # Disallow Octal Escapes
+  no-octal-escape: 2
+  # Disallow Redeclaring Variables
+  no-redeclare: 2
+  # Disallow Assignment in return Statement
+  no-return-assign: 2
+  #Disallow Self Compare
+  no-self-compare: 2
+
+  # Stylistic Issues https://eslint.org/docs/rules/#stylistic-issues
+  # Disallow or enforce spaces inside of brackets.
+  array-bracket-spacing: [2, "always"]
+  # Disallow or enforce spaces inside of single line blocks.
+  block-spacing: [2, "never"]
+  # Require Brace Style
+  brace-style: [2, "1tbs"]
+  # Require Camelcase
+  camelcase: [2, {"properties":"always"}]
+  # Add space after comma
+  comma-spacing: 2
+  # Comma style
+  comma-style: [2, "last"]
+  # Disallow or enforce spaces inside of computed properties.
+  computed-property-spacing: [2, "never"]
+  # Require newline at end of files
+  eol-last: 2
+  # 4 space indentation
+  indent: [2, 4, {SwitchCase: 4}]
+  # max 150 length
+  max-len: [2, 150, 2]
+  # require parens for Constructor
+  new-parens: 2
+  # disallow mixed spaces and tabs for indentation
+  no-mixed-spaces-and-tabs: 2
+  # max 2 consecutive empty lines
+  no-multiple-empty-lines: [2, {max: 2}]
+  # no trailing spaces
+  no-trailing-spaces: 2
+  # use single quote, we can use double quote when escape chars
+  quotes: [2, "single", "avoid-escape"]
+  # put semi-colon
+  semi: 2
+  # require space before and after keywords, eg 'for (..)'
+  keyword-spacing: [2, {"before": true, "after": true}]
+  # require space before blocks, eg 'function() {'
+  space-before-blocks: [2, "always"]
+  # no space before function, eg. 'function()'
+  space-before-function-paren: [2, "never"]
+  # no leading/trailing spaces in parens
+  space-in-parens: [2, "never"]
+  # require spaces operator like var sum = 1 + 1;
+  space-infix-ops: 2
+  # no spaces with non-word unary operators, require for word unary operators
+  space-unary-ops: 2
+
+  # ECMAScript 6 https://eslint.org/docs/rules/#ecmascript-6
+  # Suggest using 'const' wherever possible
+  prefer-const: 2
+  # Enforce parens around arrow function arguments
+  arrow-parens: [2, "always"]
+  # Require a space on each side of arrow operator
+  arrow-spacing: [2, {"before": true, "after": true}]
+  # Prevent using => in a condition where <= is intended
+  no-confusing-arrow: 2
+  # Suggest using arrow functions as callbacks.
+  prefer-arrow-callback : 2
+  # Disallow modifying variables that are declared using const
+  no-const-assign : 2
+  # require let or const instead of var
+  no-var : 2
+  # disallow duplicate name in class members
+  no-dupe-class-members : 2
+  # Require Object Literal Shorthand Syntax
+  object-shorthand : 2
+  # Suggest using template literals instead of string concatenation.
+  prefer-template : 2
+
+  # Strict Mode https://eslint.org/docs/rules/#strict-mode
+  # 'use strict' on top
+  strict: [2, "global"]
+  
