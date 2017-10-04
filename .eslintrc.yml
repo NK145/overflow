@@ -152,3 +152,8 @@ rules:
   # 'use strict' on top
   strict: [2, "global"]
   
+  # Variables https://eslint.org/docs/rules/#variables
+  # disallow use of undefined variables (globals)
+  no-undef: 2
+  # disallow declaration of variables that are not used in the code
+  no-unused-vars: [2, {"args": "none"}]

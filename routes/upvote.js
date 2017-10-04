@@ -1,25 +1,25 @@
 /**
  * Created by sonu on 21/9/17.
  */
-var express = require('express');
-var router = express.Router();
-var sanitizeHtml = require('sanitize-html');
-var mysql = require('mysql');
+'use strict';
+const express = require('express');
+const router = express.Router();
+const sanitizeHtml = require('sanitize-html');
+const mysql = require('mysql');
 
 const config = require('./config');
-var con = mysql.createConnection(config.MYSQL);
+const con = mysql.createConnection(config.MYSQL);
 
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
 });
 
-router.post('/', function(req, res, next) {
+router.post('/', (req, res, next) => {
     const qid = sanitizeHtml(req.body.qid);
-    var sql = "update questions set votes = votes+1 where qid = '"+qid+"'";
-    con.query(sql, function (err, result, fields) {
-        res.send({"result" : "ok"});
+    const sql = `update questions set votes = votes+1 where qid = '${qid}'`;
+    con.query(sql, (err, result, fields) => {
+        res.send({'result' : 'ok'});
     });
     // res.send("nk");
 });
 
 module.exports = router;
-
